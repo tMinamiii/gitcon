@@ -86,7 +86,7 @@ func ReplaceHTTPStoSSH(scanner *bufio.Scanner) string {
 			old := string(matches[0])
 			account := string(matches[1])
 			repository := string(matches[2])
-			sshURL := "url = git@github.com::" + account + "/" + repository + ".git"
+			sshURL := "url = git@github.com:" + account + "/" + repository + ".git"
 			lineStr = strings.Replace(lineStr, old, sshURL, 1)
 			newConfig = append(newConfig, lineStr)
 		} else {
@@ -101,7 +101,7 @@ func ReplaceHTTPStoSSH(scanner *bufio.Scanner) string {
 
 func ReplaceSSHtoHTTPS(scanner *bufio.Scanner) string {
 	newConfig := make([]string, 0)
-	r := regexp.MustCompile(`url \= git\@github\.com\:\:([\w\d]+)/([\w\d]+)\.git`)
+	r := regexp.MustCompile(`url \= git\@github\.com\:([\w\d]+)/([\w\d]+)\.git`)
 
 	for scanner.Scan() {
 		line := scanner.Bytes()
