@@ -12,7 +12,7 @@ gitcon ssh
 
 ```config
 [remote "origin"]
-    url = git@github.com::tMinamiii/gitcon.git
+    url = git@github.com:tMinamiii/gitcon.git
     fetch = +refs/heads/*:refs/remotes/origin/*
 ```
 
